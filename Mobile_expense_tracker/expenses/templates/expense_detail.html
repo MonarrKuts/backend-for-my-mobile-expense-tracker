@@ -1,0 +1,40 @@
+<!-- expenses/expense_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Details</title>
+</head>
+<body>
+    <h1>Expense Details</h1>
+    
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>{{ expense.name }}</td>
+        </tr>
+        <tr>
+            <th>Amount</th>
+            <td>{{ expense.amount }}</td>
+        </tr>
+        <tr>
+            <th>Category</th>
+            <td>{{ expense.category }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{ expense.date }}</td>
+        </tr>
+        <tr>
+            <th>Receipt</th>
+            <td>{{ expense.receipt }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ expense.description }}</td>
+        </tr>
+    </table>
+
+    <a href="{% url 'expense_list' %}">Back to Expense List</a>
+</body>
+</html>
