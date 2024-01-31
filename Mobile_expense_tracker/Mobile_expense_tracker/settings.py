@@ -38,9 +38,10 @@ from datetime import timedelta
 INSTALLED_APPS = [
     'expenses',
     'Mobile_expense_tracker',
+    'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
-     'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -70,6 +71,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'Mobile_expense_tracker.urls'
@@ -109,6 +111,15 @@ DATABASES = {
     }
 }
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  #  origin of my React Native app, not sure tho
+    "exp://192.168.0.21:8081",  # My Expo development server origin
+    "http://localhost:19006",  # Expo development server
+    "http://localhost:19001",  # Expo development client
+    "http://127.0.0.1:19006",
+    "http://127.0.0.1:19001",
+    "http://192.168.0.21:8000"
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

@@ -4,6 +4,8 @@
 from rest_framework import viewsets
 from expenses.models import Expense
 from rest_framework import serializers
+from rest_framework.views import APIView
+
 
 class ExpenseSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,7 +20,9 @@ class ExpenseViewSet(viewsets.ModelViewSet):
 from rest_framework import generics
 from rest_framework.permissions import AllowAny
 from expenses.serializers import UserRegistrationSerializer
+from rest_framework.response import Response
 from django.contrib.auth.models import User
+
 
 
 class UserRegistrationView(generics.CreateAPIView):
@@ -26,6 +30,17 @@ class UserRegistrationView(generics.CreateAPIView):
     serializer_class = UserRegistrationSerializer
     permission_classes = (AllowAny,)
 
+    def post(self, request, *args, **kwargs):
+        # Handle user registration logic here
+        # Get data from request.data (assuming you're using DRF)
+
+        # Assuming you have a serializer for handling registration logic
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+
+        # Return a response (e.g., success or failure message)
+        return Response({'message': 'User registered successfully'})
 
 from rest_framework_simplejwt.views import TokenObtainPairView
 from expenses.serializers import CustomTokenObtainPairSerializer  
