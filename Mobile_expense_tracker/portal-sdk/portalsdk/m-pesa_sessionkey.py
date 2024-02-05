@@ -2,7 +2,6 @@ from portalsdk import APIContext, APIMethodType, APIRequest
 from time import sleep
 from mpesa_transaction import fetch_mpesa_transactions
 
-# mpesa_integration.py
 from portalsdk import APIContext, APIMethodType, APIRequest
 import time
 

@@ -116,9 +116,11 @@ CORS_ALLOWED_ORIGINS = [
     "exp://192.168.0.21:8081",  # My Expo development server origin
     "http://localhost:19006",  # Expo development server
     "http://localhost:19001",  # Expo development client
-    "http://127.0.0.1:19006",
+    "http://127.0.0.1:19006", 
     "http://127.0.0.1:19001",
-    "http://192.168.0.21:8000"
+    "http://192.168.0.21:8000", #My lapTop's IP
+    "http://192.168.0.21:8081",
+     "http://127.0.0.1:8000",   #this Django api
 ]
 
 # Password validation

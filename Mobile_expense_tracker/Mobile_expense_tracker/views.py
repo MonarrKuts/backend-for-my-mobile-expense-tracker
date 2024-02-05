@@ -1,6 +1,4 @@
 
-
-# Create your views here.
 from rest_framework import viewsets
 from expenses.models import Expense
 from rest_framework import serializers
@@ -74,7 +72,7 @@ from rest_framework.views import APIView
 
 class YourAdminView(APIView):
     permission_classes = [IsAdminUser]
-    # add ur view logic here
+    
 
 # report view for update and delete reports
 
